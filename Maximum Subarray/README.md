@@ -4,11 +4,11 @@ I will first post the general Kadane's Algorithm, using which you will be able t
 
 Now in the interview there can be subquestions that can be directly asked from this questions, which are also stated below:-
 
-Length of the max subarray
-Elements of the max subarray
-Start and End index of max subarray
+* Length of the max subarray
+* Elements of the max subarray
+* Start and End index of max subarray
 I will give the solutions for all of them, but let us approach it one by one. To solve all three question, you just need to know the starting and ending index of the subarray. That is our main target.
-
+```
 class Solution {
     
     public void print(int i){
@@ -55,6 +55,7 @@ class Solution {
         return maxSum;
     }
 } 
+```
 Run this code and you will get proper answer, but why it is working? It is working because when the last time currSum will be > maxSum will be the time when we will get our final maxSum. Hence we just need to take the index number where final time maxSum is calculated. We get our final Index.
 
 For the first/starting index, we will capture it from when the currSum == 0. So, when currSum becomes negative then we will make it as 0, and take the next index as our starting index, and save it in another variable, because even after finding the maximum sub array, there we can have new currSum, which may lead to < 0. For example,
