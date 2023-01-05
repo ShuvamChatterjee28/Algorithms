@@ -1,0 +1,6 @@
+# Intuition - 
+
+1. By sorting the array, we are making the inner arrays in ascending order.
+2. This solution works because if we sort the intervals by their end point, it will always be optimal to use the minimum number of arrows to burst the intervals that end first. This is because, if we have two intervals A and B such that A ends before B and we use one arrow to burst A, it means that we cannot use that same arrow to burst B, and therefore we must use an additional arrow for B. Therefore, it is always optimal to use the minimum number of arrows to burst the intervals that end first.
+
+(The approach used here is to sort the intervals by their end point (the second element of each interval), and then iterate through the sorted list. At each iteration, we compare the start point of the current interval with the end point of the previous interval. If the start point of the current interval is after the end point of the previous interval, it means that the current interval does not overlap with the previous one, and therefore we need an additional arrow to burst the current interval. If the start point of the current interval is before or at the same point as the end point of the previous interval, it means that the current interval overlaps with the previous one, and we can burst both intervals with only one arrow.)
